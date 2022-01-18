@@ -1,11 +1,11 @@
 require "rails_helper"
 
-RSpec.describe "Mapquest API Service" do
-  it "can get longitutde and latitude", :vcr do
-    params = {location: "denver co"}
-    response = MapquestService.get_lonlat(params)
-
-    expect(response[:results][0][:locations][0][:latLng][:lat]).to be_a Float
-    expect(response[:results][0][:locations][0][:latLng][:lng]).to be_a Float
-  end
+RSpec.describe "Openweather API Service" do
+    it "can get weather information", :vcr do
+      params = {lat: "39.738453", lon:"-104.984853"}
+      response = WeatherService.get_weather(params)
+      expect(response[:current]).to be_a Hash
+      expect(response[:daily]).to be_an Array
+      expect(response[:hourly]).to be_an Array
+    end
 end

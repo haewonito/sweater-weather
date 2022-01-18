@@ -74,3 +74,58 @@ VCR.configure do |config|
     config.hook_into :webmock
     config.configure_rspec_metadata!  #it will name the cassette automatically under the folder of spec test name, with folder named with the test name.
 end
+
+def current_weather_data_for_test
+  {:dt=>1642521033,
+     :sunrise=>1642515466,
+     :sunset=>1642550558,
+     :temp=>40.3,
+     :feels_like=>40.3,
+     :pressure=>1009,
+     :humidity=>44,
+     :dew_point=>21.47,
+     :uvi=>0.42,
+     :clouds=>100,
+     :visibility=>10000,
+     :wind_speed=>1.01,
+     :wind_deg=>250,
+     :weather=>[{:id=>804, :main=>"Clouds", :description=>"overcast clouds", :icon=>"04d"}]}
+end
+
+def daily_weather_data_for_test
+  {:dt=>1642532400,
+     :sunrise=>1642515466,
+     :sunset=>1642550558,
+     :moonrise=>1642553160,
+     :moonset=>1642518480,
+     :moon_phase=>0.52,
+     :temp=>{:day=>44.1, :min=>36.34, :max=>49.96, :night=>36.34, :eve=>42.66, :morn=>39},
+     :feels_like=>{:day=>42.84, :night=>30.56, :eve=>38.95, :morn=>35.87},
+     :pressure=>1008,
+     :humidity=>36,
+     :dew_point=>20.34,
+     :wind_speed=>7.27,
+     :wind_deg=>45,
+     :wind_gust=>15.59,
+     :weather=>[{:id=>804, :main=>"Clouds", :description=>"overcast clouds", :icon=>"04d"}],
+     :clouds=>100,
+     :pop=>0.23,
+     :uvi=>1.83}
+end
+
+def hourly_weather_data_for_test
+  {:dt=>1642518000,
+     :temp=>39.99,
+     :feels_like=>37.29,
+     :pressure=>1009,
+     :humidity=>45,
+     :dew_point=>21.7,
+     :uvi=>0.13,
+     :clouds=>100,
+     :visibility=>10000,
+     :wind_speed=>4.03,
+     :wind_deg=>226,
+     :wind_gust=>3.67,
+     :weather=>[{:id=>804, :main=>"Clouds", :description=>"overcast clouds", :icon=>"04d"}],
+     :pop=>0}
+end
