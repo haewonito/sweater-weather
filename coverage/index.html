@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-18T08:34:39-07:00">2022-01-18T08:34:39-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-18T09:17:20-07:00">2022-01-18T09:17:20-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -71,9 +71,9 @@
       <tbody>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#8d221221703430018b771930705e98d61a2d979b" class="src_link" title="app/services/weather_service.rb">app/services/weather_service.rb</a></td>
+            <td class="strong t-file__name"><a href="#6367e15c984c5ba493826c129b05accf20209e1e" class="src_link" title="app/poros/current_weather.rb">app/poros/current_weather.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">22</td>
+            <td class="cell--number">26</td>
             <td class="cell--number">13</td>
             <td class="cell--number">13</td>
             <td class="cell--number">0</td>
@@ -230,9 +230,9 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="8d221221703430018b771930705e98d61a2d979b">
+        <div class="source_table" id="6367e15c984c5ba493826c129b05accf20209e1e">
   <div class="header">
-    <h3>app/services/weather_service.rb</h3>
+    <h3>app/poros/current_weather.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -263,7 +263,7 @@
 
             
 
-            <code class="ruby">class WeatherService</code>
+            <code class="ruby">class CurrentWeather</code>
           </li>
         </div>
       
@@ -274,62 +274,62 @@
 
             
 
-            <code class="ruby">  class &lt;&lt; self</code>
+            <code class="ruby">  attr_reader :datetime,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="3">
+            
             
 
             
 
-            <code class="ruby">    def get_weather(params = {})</code>
+            <code class="ruby">              :sunrise,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">      response = conn.get(&quot;/data/2.5/onecall&quot;) do |f|</code>
+            <code class="ruby">              :sunset,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="5">
+            
             
 
             
 
-            <code class="ruby">        f.params = params</code>
+            <code class="ruby">              :temperature,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="6">
+            
             
 
             
 
-            <code class="ruby">        f.params[:appid] = ENV[&quot;weather_api_key&quot;]</code>
+            <code class="ruby">              :feels_like,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="7">
+            
             
 
             
 
-            <code class="ruby">        f.params[:units] = &quot;imperial&quot;</code>
+            <code class="ruby">              :humidity,</code>
           </li>
         </div>
       
@@ -340,7 +340,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">              :uvi,</code>
           </li>
         </div>
       
@@ -351,18 +351,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">              :visibility,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="10">
+            
             
 
             
 
-            <code class="ruby">      parse_data(response)</code>
+            <code class="ruby">              :conditions,</code>
           </li>
         </div>
       
@@ -373,7 +373,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">              :icon</code>
           </li>
         </div>
       
@@ -395,7 +395,7 @@
 
             
 
-            <code class="ruby">    private</code>
+            <code class="ruby">  def initialize(data)</code>
           </li>
         </div>
       
@@ -406,40 +406,40 @@
 
             
 
-            <code class="ruby">    def conn</code>
+            <code class="ruby">    @datetime = data[:dt]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">    #Time.at(1318996912).to_datetime  maybe &#39;require &#39;date&#39;&#39; but probably not</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      Faraday.new(&quot;https://api.openweathermap.org&quot;)</code>
+            <code class="ruby">    @sunrise = data[:sunrise]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    @sunset = data[:sunset]</code>
           </li>
         </div>
       
@@ -450,7 +450,7 @@
 
             
 
-            <code class="ruby">    def parse_data(response)</code>
+            <code class="ruby">    @temperature = data[:temp]</code>
           </li>
         </div>
       
@@ -461,23 +461,67 @@
 
             
 
-            <code class="ruby">      JSON.parse(response.body, symbolize_names: true)</code>
+            <code class="ruby">    @feels_like = data[:feels_like]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">    @humidity = data[:humidity]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @uvi = data[:uvi]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @visibility = data[:visibility]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @conditions = data[:weather][0][:description]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @icon= data[:weather][0][:icon]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
@@ -488,7 +532,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 

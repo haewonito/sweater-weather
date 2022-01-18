@@ -74,3 +74,20 @@ VCR.configure do |config|
     config.hook_into :webmock
     config.configure_rspec_metadata!  #it will name the cassette automatically under the folder of spec test name, with folder named with the test name.
 end
+
+def current_weather_data_for_test
+  {:dt=>1642521033,
+     :sunrise=>1642515466,
+     :sunset=>1642550558,
+     :temp=>40.3,
+     :feels_like=>40.3,
+     :pressure=>1009,
+     :humidity=>44,
+     :dew_point=>21.47,
+     :uvi=>0.42,
+     :clouds=>100,
+     :visibility=>10000,
+     :wind_speed=>1.01,
+     :wind_deg=>250,
+     :weather=>[{:id=>804, :main=>"Clouds", :description=>"overcast clouds", :icon=>"04d"}]}
+end
