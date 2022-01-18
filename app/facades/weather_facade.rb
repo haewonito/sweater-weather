@@ -13,23 +13,23 @@ class WeatherFacade
     end
 
     def get_daily(params)
-      data1 = get_weather(params)
-      data2 = data1[:daily][0..4]
-      data2.map do |daily_data|
+      all_data = get_weather(params)
+      data = all_data[:daily][0..4]
+      data.map do |daily_data|
         DailyWeather.new(daily_data)
       end
     end
 
     def get_hourly(params)
-      data = get_weather(params)
-      hourly_data = data[:hourly][0..7]
-      hourly_data.map do |hourly|
-        HourlyWeather.new(hourly_data)
+      all_data = get_weather(params)
+      data = all_data[:hourly][0..7]
+      data.map do |hourly|
+        HourlyWeather.new(hourly)
       end
     end
 
-    def get_forecast(params)  #?????
-      Forecase.new(get_current(params), get_daily(params), get_hourly(params))
+    def get_forecast(params)
+      Forecast.new(get_current(params), get_daily(params), get_hourly(params))
     end
   end
 end
