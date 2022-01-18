@@ -112,3 +112,20 @@ def daily_weather_data_for_test
      :pop=>0.23,
      :uvi=>1.83}
 end
+
+def hourly_weather_data_for_test
+  {:dt=>1642518000,
+     :temp=>39.99,
+     :feels_like=>37.29,
+     :pressure=>1009,
+     :humidity=>45,
+     :dew_point=>21.7,
+     :uvi=>0.13,
+     :clouds=>100,
+     :visibility=>10000,
+     :wind_speed=>4.03,
+     :wind_deg=>226,
+     :wind_gust=>3.67,
+     :weather=>[{:id=>804, :main=>"Clouds", :description=>"overcast clouds", :icon=>"04d"}],
+     :pop=>0}
+end
