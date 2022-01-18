@@ -29,7 +29,7 @@ class WeatherFacade
     end
 
     def get_forecast(params)  #?????
-      
+      Forecase.new(get_current(params), get_daily(params), get_hourly(params))
     end
   end
 end
