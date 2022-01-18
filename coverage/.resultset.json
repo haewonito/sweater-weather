@@ -211,7 +211,7 @@
           null
         ]
       },
-      "/Users/haewonjeon/right_now_Turing/sweater_weather/app/poros/hourly_weather.rb": {
+      "/Users/haewonjeon/right_now_Turing/sweater_weather/app/poros/current_weather.rb": {
         "lines": [
           1,
           1,
@@ -219,6 +219,18 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -229,6 +241,6 @@
         ]
       }
     },
-    "timestamp": 1642526040
+    "timestamp": 1642526257
   }
 }

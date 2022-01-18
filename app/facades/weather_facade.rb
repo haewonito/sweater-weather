@@ -4,7 +4,6 @@ class WeatherFacade
       params[:lat] = MapquestFacade.get_lat(params)
       params[:lon] = MapquestFacade.get_lon(params)
       weather_data = WeatherService.get_weather(params)
-require "pry"; binding.pry
     end
 
     def  get_current(params)
@@ -27,6 +26,10 @@ require "pry"; binding.pry
       hourly_data.map do |hourly|
         HourlyWeather.new(hourly_data)
       end
+    end
+
+    def get_forecast(params)  #?????
+      
     end
   end
 end
