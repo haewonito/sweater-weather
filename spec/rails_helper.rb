@@ -129,3 +129,95 @@ def hourly_weather_data_for_test
      :weather=>[{:id=>804, :main=>"Clouds", :description=>"overcast clouds", :icon=>"04d"}],
      :pop=>0}
 end
+
+def image_data_for_test
+  {
+      "total": 5902,
+      "total_pages": 5902,
+      "results": [
+          {
+              "id": "2jKehisV_3k",
+              "created_at": "2021-03-22T18:42:16-04:00",
+              "updated_at": "2022-01-19T14:19:04-05:00",
+              "promoted_at": nil,
+              "width": 4611,
+              "height": 6916,
+              "color": "#d9d9c0",
+              "blur_hash": "LaI#=MRit6xu10%MR+NGIUE1s:s:",
+              "description": "instagram - @jakobnoahrosen",
+              "alt_description": "white car near brown wall",
+              "urls": {
+                  "raw": "https://images.unsplash.com/photo-1616452862870-b43181d0be29?ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MjY5NzA&ixlib=rb-1.2.1",
+                  "full": "https://images.unsplash.com/photo-1616452862870-b43181d0be29?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MjY5NzA&ixlib=rb-1.2.1&q=85",
+                  "regular": "https://images.unsplash.com/photo-1616452862870-b43181d0be29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MjY5NzA&ixlib=rb-1.2.1&q=80&w=1080",
+                  "small": "https://images.unsplash.com/photo-1616452862870-b43181d0be29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MjY5NzA&ixlib=rb-1.2.1&q=80&w=400",
+                  "thumb": "https://images.unsplash.com/photo-1616452862870-b43181d0be29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MjY5NzA&ixlib=rb-1.2.1&q=80&w=200"
+              },
+              "links": {
+                  "self": "https://api.unsplash.com/photos/2jKehisV_3k",
+                  "html": "https://unsplash.com/photos/2jKehisV_3k",
+                  "download": "https://unsplash.com/photos/2jKehisV_3k/download?ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MjY5NzA",
+                  "download_location": "https://api.unsplash.com/photos/2jKehisV_3k/download?ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MjY5NzA"
+              },
+              "categories": [],
+              "likes": 3,
+              "liked_by_user": false,
+              "current_user_collections": [],
+              "sponsorship": nil,
+              "topic_submissions": {},
+              "user": {
+                  "id": "qOQ1e9l0U_s",
+                  "updated_at": "2022-01-19T15:44:09-05:00",
+                  "username": "jakobnoahrosen",
+                  "name": "Jakob Rosen",
+                  "first_name": "Jakob",
+                  "last_name": "Rosen",
+                  "twitter_username": nil,
+                  "portfolio_url": "https://www.instagram.com/jakobnoahrosen/",
+                  "bio": nil,
+                  "location": "Denver, Co",
+                  "links": {
+                      "self": "https://api.unsplash.com/users/jakobnoahrosen",
+                      "html": "https://unsplash.com/@jakobnoahrosen",
+                      "photos": "https://api.unsplash.com/users/jakobnoahrosen/photos",
+                      "likes": "https://api.unsplash.com/users/jakobnoahrosen/likes",
+                      "portfolio": "https://api.unsplash.com/users/jakobnoahrosen/portfolio",
+                      "following": "https://api.unsplash.com/users/jakobnoahrosen/following",
+                      "followers": "https://api.unsplash.com/users/jakobnoahrosen/followers"
+                  },
+                  "profile_image": {
+                      "small": "https://images.unsplash.com/profile-1616187995138-11252f2dd5b2image?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32",
+                      "medium": "https://images.unsplash.com/profile-1616187995138-11252f2dd5b2image?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64",
+                      "large": "https://images.unsplash.com/profile-1616187995138-11252f2dd5b2image?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128"
+                  },
+                  "instagram_username": "jakobnoahrosen",
+                  "total_collections": 8,
+                  "total_likes": 108,
+                  "total_photos": 2433,
+                  "accepted_tos": true,
+                  "for_hire": true,
+                  "social": {
+                      "instagram_username": "jakobnoahrosen",
+                      "portfolio_url": "https://www.instagram.com/jakobnoahrosen/",
+                      "twitter_username": nil,
+                      "paypal_email": nil
+                  }
+              },
+              "tags": [
+                  {
+                      "type": "search",
+                      "title": "denver"
+                  },
+                  {
+                      "type": "search",
+                      "title": "co"
+                  },
+                  {
+                      "type": "search",
+                      "title": "usa"
+                  }
+              ]
+          }
+      ]
+  }
+end
