@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=GXOq2SegRPAYkD8k7tXYlN1XrxU9zXfu1j0muQ9wos8&per_page=1&query=denver%20co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1005'
+      Server:
+      - Cowboy
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      X-Unsplash-Version:
+      - v1
+      Warning:
+      - The tags property in this endpoint is deprecated. https://changelog.unsplash.com/deprecations/2021/07/12/tags-search-deprecation.html
+      Link:
+      - <https://api.unsplash.com/search/photos?client_id=GXOq2SegRPAYkD8k7tXYlN1XrxU9zXfu1j0muQ9wos8&page=5902&per_page=1&query=denver+co>;
+        rel="last", <https://api.unsplash.com/search/photos?client_id=GXOq2SegRPAYkD8k7tXYlN1XrxU9zXfu1j0muQ9wos8&page=2&per_page=1&query=denver+co>;
+        rel="next"
+      X-Total:
+      - '5902'
+      X-Per-Page:
+      - '1'
+      Etag:
+      - W/"0a4c3a20d4bcfa4aa66ef3117c24352d"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Request-Id:
+      - 78b5e314-e615-44e6-8dbe-c2381925d003
+      X-Runtime:
+      - '0.066344'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 20 Jan 2022 02:20:36 GMT
+      Age:
+      - '12465'
+      X-Served-By:
+      - cache-iad-kjyo7100046-IAD, cache-den8283-DEN
+      X-Cache:
+      - MISS, HIT
+      X-Cache-Hits:
+      - 0, 1
+      X-Timer:
+      - S1642645237.891812,VS0,VE4
+      Vary:
+      - Accept-Encoding, Origin,Authorization,Accept-Language,client-geo-region,Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":5902,"total_pages":5902,"results":[{"id":"2jKehisV_3k","created_at":"2021-03-22T18:42:16-04:00","updated_at":"2022-01-19T14:19:04-05:00","promoted_at":null,"width":4611,"height":6916,"color":"#d9d9c0","blur_hash":"LaI#=MRit6xu10%MR+NGIUE1s:s:","description":"instagram
+        - @jakobnoahrosen","alt_description":"white car near brown wall","urls":{"raw":"https://images.unsplash.com/photo-1616452862870-b43181d0be29?ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MzI3NzE\u0026ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1616452862870-b43181d0be29?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MzI3NzE\u0026ixlib=rb-1.2.1\u0026q=85","regular":"https://images.unsplash.com/photo-1616452862870-b43181d0be29?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MzI3NzE\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080","small":"https://images.unsplash.com/photo-1616452862870-b43181d0be29?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MzI3NzE\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=400","thumb":"https://images.unsplash.com/photo-1616452862870-b43181d0be29?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MzI3NzE\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=200"},"links":{"self":"https://api.unsplash.com/photos/2jKehisV_3k","html":"https://unsplash.com/photos/2jKehisV_3k","download":"https://unsplash.com/photos/2jKehisV_3k/download?ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MzI3NzE","download_location":"https://api.unsplash.com/photos/2jKehisV_3k/download?ixid=MnwyOTI3OTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMjBjb3xlbnwwfHx8fDE2NDI2MzI3NzE"},"categories":[],"likes":3,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"topic_submissions":{},"user":{"id":"qOQ1e9l0U_s","updated_at":"2022-01-19T16:54:08-05:00","username":"jakobnoahrosen","name":"Jakob
+        Rosen","first_name":"Jakob","last_name":"Rosen","twitter_username":null,"portfolio_url":"https://www.instagram.com/jakobnoahrosen/","bio":null,"location":"Denver,
+        Co","links":{"self":"https://api.unsplash.com/users/jakobnoahrosen","html":"https://unsplash.com/@jakobnoahrosen","photos":"https://api.unsplash.com/users/jakobnoahrosen/photos","likes":"https://api.unsplash.com/users/jakobnoahrosen/likes","portfolio":"https://api.unsplash.com/users/jakobnoahrosen/portfolio","following":"https://api.unsplash.com/users/jakobnoahrosen/following","followers":"https://api.unsplash.com/users/jakobnoahrosen/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1616187995138-11252f2dd5b2image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1616187995138-11252f2dd5b2image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1616187995138-11252f2dd5b2image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":"jakobnoahrosen","total_collections":8,"total_likes":108,"total_photos":2433,"accepted_tos":true,"for_hire":true,"social":{"instagram_username":"jakobnoahrosen","portfolio_url":"https://www.instagram.com/jakobnoahrosen/","twitter_username":null,"paypal_email":null}},"tags":[{"type":"search","title":"denver"},{"type":"search","title":"co"},{"type":"search","title":"usa"}]}]}'
+  recorded_at: Thu, 20 Jan 2022 02:20:36 GMT
+recorded_with: VCR 6.0.0

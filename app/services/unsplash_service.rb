@@ -1,10 +1,9 @@
-class UpsplashService
+class UnsplashService
   class << self
-
-    def get_image(location)
-      response = conn.get("search/photos") do
+    def get_image(params = {})
+      response = conn.get("search/photos") do |f|
+        f.params = params
         f.params[:client_id] = ENV["upsplash_api_key"]
-        f.params[:query] = "#{location}"
         f.params[:per_page] = 1
       end
 
