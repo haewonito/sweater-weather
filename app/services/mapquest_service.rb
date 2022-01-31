@@ -5,7 +5,14 @@ class MapquestService
         f.params = params
         f.params[:key] = ENV["mapquest_api_key"]
       end
+      parse_data(response)
+    end
 
+    def get_direction(params = {})
+      response = conn.get("/directions/v2/route") do |f|
+        f.params = params
+        f.params[:key] = ENV["mapquest_api_key"]
+      end
       parse_data(response)
     end
 
