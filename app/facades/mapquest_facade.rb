@@ -9,5 +9,6 @@ class MapquestFacade
       mapquest_data = MapquestService.get_lonlat(params)
       mapquest_data[:results][0][:locations][0][:latLng][:lng]
     end
+
   end
 end

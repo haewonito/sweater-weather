@@ -3,6 +3,7 @@ class ImageSerializer
   #
   # set_type "image"
   # set_id {id: nil}
+  # attributes :image... nest location, url and credit inside the image
   def self.unsplash_image(image)
     {
       "data": {

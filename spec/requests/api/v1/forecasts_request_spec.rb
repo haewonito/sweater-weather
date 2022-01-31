@@ -30,8 +30,6 @@ RSpec.describe 'Forecast API' do
 
      expect(forecast[:data][:attributes]).to_not have_key(:lon)
      expect(forecast[:data][:attributes]).to_not have_key(:lat)
-     # expect(forecast[:data][:attributes][:daily_weathers][1]).to_not have_key[:dew_point]
-     # expect(forecast[:data][:attributes][:hourly_weathers][1]).to_not have_key[:dew_point]
    end
   end
 end
