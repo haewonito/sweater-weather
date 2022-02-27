@@ -55,70 +55,65 @@ This API consumes the following APIs:
 
 # API Endpoints
 
-  - **Weather Data for the Landing Page **: 
-    - Request: 
+  - **Weather Data for the Landing Page**:
+    - Request Example: 
       ```
       GET "/api/v1/forecast?location=denver, co”
       ```
-    - Response: 
-      - Includes i. Current Weather, ii. Hourly Weather for the next 8 hours and iii. Daily Weather for the next 5 days. 
+    - Response Example: 
+      - Includes 1. Current Weather, 2. Hourly Weather for the next 8 hours and 3. Daily Weather for the next 5 days. 
      ```
-{
-  "data": {
-    "id": null,
-    "type": "forecast",
-    "attributes": {
-      "current_weather": {
-        "datetime": "2020-09-30 13:27:03 -0600",
-        "temperature": 79.4,
-        etc
-      },
-      "daily_weather": [
         {
-          "date": "2020-10-01",
-          "sunrise": "2020-10-01 06:10:43 -0600",
-          etc
-        },
-        {...} etc
-      ],
-      "hourly_weather": [
-        {
-          "time": "14:00:00",
-          "conditions": "cloudy with a chance of meatballs",
-          etc
-        },
-        {...} etc
-      ]
-    }
-  }
-}
+          "data": {
+            "id": null,
+            "type": "forecast",
+            "attributes": {
+              "current_weather": {
+                "datetime": "2020-09-30 13:27:03 -0600",
+                "temperature": 79.4,
+                etc
+              },
+              "daily_weather": [
+                {
+                  "date": "2020-10-01",
+                  "sunrise": "2020-10-01 06:10:43 -0600",
+                  etc
+                },
+                {...} etc
+              ],
+              "hourly_weather": [
+                {
+                  "time": "14:00:00",
+                  "conditions": "cloudy with a chance of meatballs",
+                  etc
+                },
+                {...} etc
+              ]
+            }
+          }
+        }
       ```
- - **Create a new subscription for a customer**: 
-    - Request: POST '/api/v1/customers/1/subscriptions'
-    - Request Parameter as JSON: title, frequency and tea_id are required.
-     ```
-            {
-              "title": "Sencha Monthly",
-              "frequency": "monthly",
-              "tea_id": 1
-             }
-     ```
+ - **Background Image for the City**: 
+    - Request: GET  “/api/v1/backgrounds?location=denver, co”
     - Response:
      ```
-            {
-              "data": {
-                  "id": "12",
-                  "type": "subscriptions",
-                  "attributes": {
-                      "title": "Sencha Monthly",
-                      "price_per_month": "20.0",
-                      "status": "active",
-                      "frequency": "monthly",
-                      "customer_id": 1,
-                      "tea_id": 1
-                  }
+        {
+          "data": {
+            "type": "image",
+            "id": null,
+            "attributes": {
+              "image": {
+                "location": "denver,co",
+                "image_url": "https://pixabay.com/get/54e6d4444f50a814f1dc8460962930761c38d6ed534c704c7c2878dd954dc451_640.jpg",
+                "credit": {
+                  "source": "pixabay.com",
+                  "author": "quinntheislander",
+                  "logo": "https://pixabay.com/static/img/logo_square.png"
                 }
               }
+            }
+          }
+        }
     ```
   
  - **Delete a subscription**: 
