@@ -2,6 +2,15 @@
 
 Sweater-Weather was a 5-day solo project for Module 3 Backend Engineering Curriculum at Turing School of Software and Design. It is a back-end Rails API for an application that plans road trips. The application is supposed to employ a service-oriented architecture, in which the front-end communicate with the back-end through an API. The details of the requirement for the project is specified [here](https://backend.turing.edu/module3/projects/sweater_weather/requirements).
 
+#### What can I do on Virtual Escape?
+  - Search for a destination and see matching photos
+  - Create trips (these could be places that you've been to or have yet to visit)
+  - Add photos to your trip
+    - upload a file
+    - or save from your search results
+  - View stats like top saved destinations
+
+*I created this API for my application to Shopify's Backend Engineering Internship program.  This is an API only (no user interface) but I plan to build out a React frontend for Virtual Escape.*
 
 #### Stack
 - Ruby on Rails, RSpec, PostgreSQL
@@ -9,7 +18,8 @@ Sweater-Weather was a 5-day solo project for Module 3 Backend Engineering Curric
 
 # Readme Content
 - [Local Setup](#local-setup)
-- [Schema Diagram](#schema-diagram)
+- [Test Suite](#test-suite)
+- [External APIs](#external-apis)
 - [API Endpoints](#api-endpoints)
 - [Contributor](#contributor)
 
@@ -29,45 +39,59 @@ Sweater-Weather was a 5-day solo project for Module 3 Backend Engineering Curric
   - `rails s`
   - local server address is:  "http://localhost:3000" 
 
-# Schema Diagram
+# Test Suite
+- Run with `bundle exec rspec`
+- All tests should be passing
+- 99% test coverage
 
-<img width="745" alt="Screen Shot 2022-02-24 at 5 27 36 PM" src="https://user-images.githubusercontent.com/86392608/155630313-2fcb895d-3aff-402f-a44b-6ba02f3f64b6.png">
+# External APIs
+This API consumes the following APIs:
+- [MapQuest Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/) to search for latitude and longitude to a trip's location 
+- [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve forecast data with the latitude and longitude from MapQuest API.
+- [Unsplash Search Photos API](https://unsplash.com/documentation#search-photos) to search for an image to use as a background image for a location
+  - Requirements for use: [properly provide attribution for the photographer and Unsplash](https://help.unsplash.com/en/articles/2511315-guideline-attribution)
+
 
 
 # API Endpoints
 
-  - **View all subscription for a customer **: 
-    - Request: GET '/api/v1/customers/:id/subscriptions'
-    - Response:
+  - **Weather Data for the Landing Page **: 
+    - Request: 
+      ```
+      GET "/api/v1/forecast?location=denver, co”
+      ```
+    - Response: 
+      - Includes i. Current Weather, ii. Hourly Weather for the next 8 hours and iii. Daily Weather for the next 5 days. 
      ```
-          {
-              "data": [
-                  {
-                      "id": "1",
-                      "type": "subscriptions",
-                      "attributes": {
-                          "title": "Subscription1",
-                          "price_per_month": null,
-                          "status": "active",
-                          "frequency": "biweekly",
-                          "customer_id": 1,
-                          "tea_id": 1
-                      }
-                  },
-                  {
-                      "id": "2",
-                      "type": "subscriptions",
-                      "attributes": {
-                          "title": "Subscription2",
-                          "price_per_month": null,
-                          "status": "active",
-                          "frequency": "bimonthly",
-                          "customer_id": 1,
-                          "tea_id": 6
-                      }
-                  }
-              ]
-          }
+{
+  "data": {
+    "id": null,
+    "type": "forecast",
+    "attributes": {
+      "current_weather": {
+        "datetime": "2020-09-30 13:27:03 -0600",
+        "temperature": 79.4,
+        etc
+      },
+      "daily_weather": [
+        {
+          "date": "2020-10-01",
+          "sunrise": "2020-10-01 06:10:43 -0600",
+          etc
+        },
+        {...} etc
+      ],
+      "hourly_weather": [
+        {
+          "time": "14:00:00",
+          "conditions": "cloudy with a chance of meatballs",
+          etc
+        },
+        {...} etc
+      ]
+    }
+  }
+}
       ```
  - **Create a new subscription for a customer**: 
     - Request: POST '/api/v1/customers/1/subscriptions'
