@@ -94,8 +94,8 @@ This API consumes the following APIs:
         }
       ```
  - **Background Image for the City**: 
-    - Request: GET  “/api/v1/backgrounds?location=denver, co”
-    - Response:
+    - Request Example: GET  “/api/v1/backgrounds?location=denver, co”
+    - Response Example:
      ```
         {
           "data": {
@@ -116,6 +116,38 @@ This API consumes the following APIs:
         }
     ```
   
+ - **Register a user with email and password and generate an api_key**: 
+    - Request Example: POST '/api/v1/subscriptions/:id'
+      - As JSON payload in the body of the request:
+    ```
+            {
+              "email": "whatever@example.com",
+              "password": "password",
+              "password_confirmation": "password"
+            }
+    ```
+    - Response Example:
+    ```
+      {
+        "data": {
+          "type": "users",
+          "id": "1",
+          "attributes": {
+            "email": "whatever@example.com",
+            "api_key": "jgn983hy48thw9begh98h4539h4"
+          }
+        }
+      }
+    ```
+ - **Delete a subscription**: 
+    - Request: DELETE '/api/v1/subscriptions/:id'
+    - Response:
+    ```
+      {
+        "message": "The subscription is successfully deleted"
+      }
+    ```
+    
  - **Delete a subscription**: 
     - Request: DELETE '/api/v1/subscriptions/:id'
     - Response:
