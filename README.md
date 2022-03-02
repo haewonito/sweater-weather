@@ -1,26 +1,17 @@
 ## Sweater-Weather
 
-Sweater-Weather was a 5-day solo project for Module 3 Backend Engineering Curriculum at Turing School of Software and Design. It is a back-end Rails API for an application that plans road trips. The application is supposed to employ a service-oriented architecture, in which the front-end communicate with the back-end through an API. The details of the requirement for the project is specified [here](https://backend.turing.edu/module3/projects/sweater_weather/requirements).
+Sweater-Weather was a 5-day solo project for Module 3 Backend Engineering Curriculum at Turing School of Software and Design. The main task was to consume and expose various endpoints as a back-end Rails API for a trip-planning application with a service-oriented architecture. The requirement for the project is specified [here](https://backend.turing.edu/module3/projects/sweater_weather/requirements).
 
-#### What can I do on Virtual Escape?
-  - Search for a destination and see matching photos
-  - Create trips (these could be places that you've been to or have yet to visit)
-  - Add photos to your trip
-    - upload a file
-    - or save from your search results
-  - View stats like top saved destinations
-
-*I created this API for my application to Shopify's Backend Engineering Internship program.  This is an API only (no user interface) but I plan to build out a React frontend for Virtual Escape.*
 
 #### Stack
-- Ruby on Rails, RSpec, PostgreSQL
+- Ruby on Rails, PostgreSQL, RSpec 
 
 
 # Readme Content
 - [Local Setup](#local-setup)
-- [Test Suite](#test-suite)
 - [External APIs](#external-apis)
 - [API Endpoints](#api-endpoints)
+- [Test Suite](#test-suite)
 - [Contributor](#contributor)
 
 # Local Setup
@@ -39,10 +30,6 @@ Sweater-Weather was a 5-day solo project for Module 3 Backend Engineering Curric
   - `rails s`
   - local server address is:  "http://localhost:3000" 
 
-# Test Suite
-- Run with `bundle exec rspec`
-- All tests should be passing
-- 99% test coverage
 
 # External APIs
 This API consumes the following APIs:
@@ -54,8 +41,52 @@ This API consumes the following APIs:
 
 
 # API Endpoints
-
-  - **Weather Data for the Landing Page**:
+ - **Register a user with email and password and generate an api_key**: 
+   - Request Example: POST '/api/v1/users'
+     - As JSON payload in the body of the request:
+    ```
+            {
+              "email": "whatever@example.com",
+              "password": "password",
+              "password_confirmation": "password"
+            }
+    ```
+   - Response Example:
+    ```
+      {
+        "data": {
+          "type": "users",
+          "id": "1",
+          "attributes": {
+            "email": "whatever@example.com",
+            "api_key": "jgn983hy48thw9begh98h4539h4"
+          }
+        }
+      }
+    ```
+ - **Login a returning user**: 
+   - Request Example: POST '/api/v1/sessions'
+     - As JSON payload in the body of the request:
+    ```
+            {
+              "email": "whatever@example.com",
+              "password": "password"
+            }
+    ```
+   - Response:
+    ```
+      {
+          "data": {
+            "type": "users",
+            "id": "1",
+            "attributes": {
+              "email": "whatever@example.com",
+              "api_key": "jgn983hy48thw9begh98h4539h4"
+            }
+          }
+      }
+    ```
+ - **Weather Data for the Landing Page**:
     - Request Example: 
       ```
       GET "/api/v1/forecast?location=denver, co”
@@ -94,7 +125,7 @@ This API consumes the following APIs:
         }
       ```
  - **Background Image for the City**: 
-    - Request Example: GET  “/api/v1/backgrounds?location=denver, co”
+    - Request Example: GET  “/api/v1/image?location=denver, co”
     - Response Example:
      ```
         {
@@ -116,46 +147,42 @@ This API consumes the following APIs:
         }
     ```
   
- - **Register a user with email and password and generate an api_key**: 
-    - Request Example: POST '/api/v1/subscriptions/:id'
+
+    
+ - **Get travel time and weather forecast at ETA**: 
+    - Request Example: POST '/api/v1/road_trip'
       - As JSON payload in the body of the request:
-    ```
-            {
-              "email": "whatever@example.com",
-              "password": "password",
-              "password_confirmation": "password"
-            }
-    ```
-    - Response Example:
+      ```
+      {
+        "origin": "Denver,CO",
+        "destination": "Pueblo,CO",
+        "api_key": "jgn983hy48thw9begh98h4539h4"
+      }
+
+      ```
+    - Response:
     ```
       {
         "data": {
-          "type": "users",
-          "id": "1",
+          "id": null,
+          "type": "roadtrip",
           "attributes": {
-            "email": "whatever@example.com",
-            "api_key": "jgn983hy48thw9begh98h4539h4"
+            "start_city": "Denver, CO",
+            "end_city": "Estes Park, CO",
+            "travel_time": "2 hours, 13 minutes"
+            "weather_at_eta": {
+              "temperature": 59.4,
+              "conditions": "partly cloudy with a chance of meatballs"
+            }
           }
         }
       }
     ```
- - **Delete a subscription**: 
-    - Request: DELETE '/api/v1/subscriptions/:id'
-    - Response:
-    ```
-      {
-        "message": "The subscription is successfully deleted"
-      }
-    ```
     
- - **Delete a subscription**: 
-    - Request: DELETE '/api/v1/subscriptions/:id'
-    - Response:
-    ```
-      {
-        "message": "The subscription is successfully deleted"
-      }
-    ```
+# Test Suite
+- Run with `bundle exec rspec`
+- All tests should be passing
+- 99% test coverage
 
 # Contributor
 - Haewon Jeon      |  [Github](https://github.com/haewonito)   |   [LinkedIn](linkedin.com/in/haewonito)
